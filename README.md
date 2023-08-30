@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/verful/adonis-scheduler/raw/master/.github/banner.png" width="1200px">
+  <img src="https://github.com/verful/adonis-scheduler/raw/main/.github/banner.png" width="1200px">
 </div>
 
 
