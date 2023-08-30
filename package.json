@@ -91,12 +91,12 @@
         }
       ]
     },
-    "types": "@verful/adonis-scheduler",
+    "types": "@verful/scheduler",
     "providers": [
-      "@verful/adonis-scheduler"
+      "@verful/scheduler"
     ],
     "commands": [
-      "@verful/adonis-scheduler/build/commands"
+      "@verful/scheduler/build/commands"
     ]
   },
   "eslintConfig": {
@@ -190,12 +190,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arthur-er/adonis-scheduler.git"
+    "url": "git+https://github.com/verful/adonis-scheduler.git"
   },
   "bugs": {
-    "url": "https://github.com/arthur-er/adonis-scheduler/issues"
+    "url": "https://github.com/verful/adonis-scheduler/issues"
   },
-  "homepage": "https://github.com/arthur-er/adonis-scheduler#readme",
+  "homepage": "https://github.com/verful/adonis-scheduler#readme",
   "dependencies": {
     "luxon": "^3.4.2",
     "node-cron": "^3.0.2"
