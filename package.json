@@ -1,7 +1,7 @@
 {
-  "name": "@verful/adonis-package-template",
+  "name": "@verful/adonis-scheduler",
   "version": "1.0.0",
-  "description": "A template for AdonisJS packages",
+  "description": "Easily manage scheduled tasks in AdonisJS",
   "keywords": [
     "typescript",
     "adonisjs",
@@ -10,47 +10,58 @@
   ],
   "license": "MIT",
   "scripts": {
-    "configure": "node --require=@adonisjs/require-ts/build/register configure.ts",
-    "pretest": "yarn lint",
+    "pretest": "pnpm lint",
     "test": "node --require=@adonisjs/require-ts/build/register bin/test.ts",
+    "coverage": "nyc pnpm test",
     "clean": "del-cli build",
     "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
-    "compile": "yarn lint && yarn clean && tsc",
-    "build": "yarn compile && yarn copyfiles",
+    "compile": "pnpm lint && pnpm clean && tsc",
+    "build": "pnpm compile && pnpm copyfiles",
     "release": "np --message=\"chore(release): %s\"",
-    "version": "yarn build",
-    "prepublishOnly": "yarn build",
+    "version": "pnpm build",
+    "prepublishOnly": "pnpm build",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
     "prepare": "husky install"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@adonisjs/core": "^5.8.5",
-    "@adonisjs/require-ts": "^2.0.12",
+    "@adonisjs/application": "^5.3.0",
+    "@adonisjs/core": "^5.9.0",
+    "@adonisjs/fold": "^8.2.0",
+    "@adonisjs/require-ts": "^2.0.13",
     "@adonisjs/sink": "^5.4.0",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@japa/assert": "^1.3.4",
     "@japa/run-failed-tests": "^1.0.7",
     "@japa/runner": "^2.0.9",
     "@japa/spec-reporter": "^1.1.12",
+    "@poppinss/dev-utils": "^2.0.3",
     "@poppinss/utils": "^5.0.0",
+    "@types/luxon": "^3.3.1",
     "@types/node": "^18.0.6",
+    "@types/node-cron": "^3.0.8",
+    "@types/sinon": "^10.0.16",
     "copyfiles": "^2.4.1",
     "del-cli": "^4.0.1",
     "eslint": "^8.20.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-adonis": "^2.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
     "execa": "^5",
     "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "np": "^7.6.1",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.3"
+    "lint-staged": "^14.0.1",
+    "np": "^8.0.4",
+    "nyc": "^15.1.0",
+    "prettier": "^3.0.3",
+    "reflect-metadata": "^0.1.13",
+    "sinon": "^15.2.0",
+    "typescript": "^5.2.2"
   },
-  "main": "",
+  "main": "./build/providers/AdonisScheduleProvider.js",
   "files": [
     "build/adonis-typings",
     "build/commands",
@@ -67,27 +78,82 @@
   "adonisjs": {
     "instructionsMd": "./build/instructions.md",
     "preloads": [],
-    "templates": {},
-    "types": "@package/slug",
+    "templates": {
+      "config": [
+        {
+          "src": "config.txt",
+          "dest": "@verful/adonis-scheduler"
+        }
+      ],
+      "contracts": [
+        {
+          "src": "contract.txt",
+          "dest": "@verful/adonis-scheduler"
+        }
+      ]
+    },
+    "types": "@verful/adonis-scheduler",
     "providers": [
-      "@package/slug"
+      "@verful/adonis-scheduler"
+    ],
+    "commands": [
+      "@verful/adonis-scheduler/build/commands"
     ]
   },
   "eslintConfig": {
     "extends": [
-      "plugin:adonis/typescriptPackage",
+      "plugin:adonis/typescriptApp",
+      "plugin:unicorn/recommended",
       "prettier"
     ],
     "plugins": [
-      "prettier"
+      "prettier",
+      "eslint-plugin-import-helpers"
     ],
     "rules": {
-      "prettier/prettier": [
+      "prettier/prettier": "error",
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+            "/node:(.*)/",
+            "module",
+            "/@ioc:(.*)/",
+            [
+              "parent",
+              "sibling",
+              "index"
+            ]
+          ],
+          "alphabetize": {
+            "order": "asc",
+            "ignoreCase": true
+          }
+        }
+      ],
+      "unicorn/prefer-module": "off",
+      "unicorn/prefer-top-level-await": "off",
+      "unicorn/text-encoding-identifier-case": "off",
+      "unicorn/no-null": "off",
+      "unicorn/no-array-reduce": "off",
+      "unicorn/prevent-abbreviations": [
         "error",
         {
-          "endOfLine": "auto"
+          "allowList": {
+            "env": true
+          }
         }
-      ]
+      ],
+      "unicorn/filename-case": [
+        "error",
+        {
+          "cases": {
+            "snakeCase": true
+          }
+        }
+      ],
+      "unicorn/no-array-callback-reference": "off"
     }
   },
   "eslintIgnore": [
@@ -118,5 +184,21 @@
     "tag": "latest",
     "branch": "main",
     "anyBranch": false
+  },
+  "author": {
+    "name": "Arthur Rezende",
+    "email": "arthur-er@protonmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthur-er/adonis-scheduler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arthur-er/adonis-scheduler/issues"
+  },
+  "homepage": "https://github.com/arthur-er/adonis-scheduler#readme",
+  "dependencies": {
+    "luxon": "^3.4.2",
+    "node-cron": "^3.0.2"
   }
 }
