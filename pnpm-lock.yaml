@@ -57,7 +57,7 @@ devDependencies:
     version: 5.0.0
   '@types/luxon':
     specifier: ^3.3.1
-    version: 3.3.1
+    version: 3.3.2
   '@types/node':
     specifier: ^18.0.6
     version: 18.17.12
@@ -361,7 +361,7 @@ packages:
       '@adonisjs/bodyparser': 8.1.9(@adonisjs/application@5.3.0)(@adonisjs/drive@2.3.0)(@adonisjs/http-server@5.12.0)
       '@adonisjs/http-server': 5.12.0(@adonisjs/application@5.3.0)(@adonisjs/encryption@4.0.8)
       '@poppinss/utils': 5.0.0
-      '@types/luxon': 3.3.1
+      '@types/luxon': 3.3.2
       '@types/validator': 13.11.1
       luxon: 3.4.2
       normalize-url: 6.1.0
@@ -1535,8 +1535,8 @@ packages:
       '@types/node': 18.17.12
     dev: true
 
-  /@types/luxon@3.3.1:
-    resolution: {integrity: sha512-XOS5nBcgEeP2PpcqJHjCWhUCAzGfXIU8ILOSLpx2FhxqMW9KdxgCGXNOEKGVBfveKtIpztHzKK5vSRVLyW/NqA==}
+  /@types/luxon@3.3.2:
+    resolution: {integrity: sha512-l5cpE57br4BIjK+9BSkFBOsWtwv6J9bJpC7gdXIzZyI0vuKvNTk0wZZrkQxMGsUAuGW9+WMNWF2IJMD7br2yeQ==}
     dev: true
 
   /@types/minimist@1.2.2:
