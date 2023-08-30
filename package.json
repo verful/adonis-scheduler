@@ -47,7 +47,7 @@
     "@types/node-cron": "^3.0.8",
     "@types/sinon": "^10.0.16",
     "copyfiles": "^2.4.1",
-    "del-cli": "^4.0.1",
+    "del-cli": "^5.0.1",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-adonis": "^2.1.0",
