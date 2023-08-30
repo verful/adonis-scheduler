@@ -4,7 +4,6 @@ import { resolve } from 'node:path'
 
 import { Application } from '@adonisjs/core/build/standalone'
 import { assert } from '@japa/assert'
-import { runFailedTests } from '@japa/run-failed-tests'
 import { processCliArgs, configure, run, TestContext } from '@japa/runner'
 import { specReporter } from '@japa/spec-reporter'
 import { Filesystem } from '@poppinss/dev-utils'
