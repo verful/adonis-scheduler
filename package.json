@@ -1,0 +1,122 @@
+{
+  "name": "@verful/adonis-package-template",
+  "version": "1.0.0",
+  "description": "A template for AdonisJS packages",
+  "keywords": [
+    "typescript",
+    "adonisjs",
+    "package",
+    "template"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "configure": "node --require=@adonisjs/require-ts/build/register configure.ts",
+    "pretest": "yarn lint",
+    "test": "node --require=@adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "copyfiles": "copyfiles \"templates/**/*.txt\" \"instructions.md\" build",
+    "compile": "yarn lint && yarn clean && tsc",
+    "build": "yarn compile && yarn copyfiles",
+    "release": "np --message=\"chore(release): %s\"",
+    "version": "yarn build",
+    "prepublishOnly": "yarn build",
+    "lint": "eslint . --ext=.ts",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@adonisjs/core": "^5.8.5",
+    "@adonisjs/require-ts": "^2.0.12",
+    "@adonisjs/sink": "^5.4.0",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@japa/assert": "^1.3.4",
+    "@japa/run-failed-tests": "^1.0.7",
+    "@japa/runner": "^2.0.9",
+    "@japa/spec-reporter": "^1.1.12",
+    "@poppinss/utils": "^5.0.0",
+    "@types/node": "^18.0.6",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^4.0.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-adonis": "^2.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "execa": "^5",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "np": "^7.6.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.3"
+  },
+  "main": "",
+  "files": [
+    "build/adonis-typings",
+    "build/commands",
+    "build/providers",
+    "build/src",
+    "build/templates",
+    "build/instructions.md"
+  ],
+  "types": "build/adonis-typings/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "adonisjs": {
+    "instructionsMd": "./build/instructions.md",
+    "preloads": [],
+    "templates": {},
+    "types": "@package/slug",
+    "providers": [
+      "@package/slug"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "np": {
+    "message": "chore(release): %s",
+    "tag": "latest",
+    "branch": "main",
+    "anyBranch": false
+  }
+}
