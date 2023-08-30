@@ -1,5 +1,5 @@
 {
-  "name": "@verful/adonis-scheduler",
+  "name": "@verful/scheduler",
   "version": "1.0.0",
   "description": "Easily manage scheduled tasks in AdonisJS",
   "keywords": [
