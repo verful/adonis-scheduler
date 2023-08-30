@@ -61,6 +61,9 @@
     "sinon": "^15.2.0",
     "typescript": "^5.2.2"
   },
+  "peerDependencies": {
+    "@adonisjs/core": "^5.9.0"
+  },
   "main": "./build/providers/AdonisScheduleProvider.js",
   "files": [
     "build/adonis-typings",
@@ -77,18 +80,14 @@
   },
   "adonisjs": {
     "instructionsMd": "./build/instructions.md",
-    "preloads": [],
+    "preloads": [
+      "./start/tasks"
+    ],
     "templates": {
-      "config": [
+      "start": [
         {
-          "src": "config.txt",
-          "dest": "@verful/adonis-scheduler"
-        }
-      ],
-      "contracts": [
-        {
-          "src": "contract.txt",
-          "dest": "@verful/adonis-scheduler"
+          "src": "tasks.txt",
+          "dest": "tasks"
         }
       ]
     },

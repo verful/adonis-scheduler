@@ -51,8 +51,8 @@ declare module '@ioc:Verful/Scheduler' {
     rejects: Condition[]
     skip(condition: Condition): this
     when(condition: Condition): this
-    between(start: DateTime, end: DateTime): this
-    unlessBetween(start: DateTime, end: DateTime): this
+    between(start: Time, end: Time): this
+    unlessBetween(start: Time, end: Time): this
     environments(environments: Array<'production' | 'development' | 'staging' | 'test'>): this
   }
 
