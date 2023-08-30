@@ -1,6 +1,6 @@
 {
   "name": "@verful/scheduler",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Easily manage scheduled tasks in AdonisJS",
   "keywords": [
     "typescript",
@@ -9,6 +9,9 @@
     "template"
   ],
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "scripts": {
     "pretest": "pnpm lint",
     "test": "node --require=@adonisjs/require-ts/build/register bin/test.ts",
