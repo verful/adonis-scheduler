@@ -92,8 +92,8 @@ devDependencies:
     specifier: ^48.0.1
     version: 48.0.1(eslint@8.48.0)
   execa:
-    specifier: ^5.1.1
-    version: 5.1.1
+    specifier: ^8.0.1
+    version: 8.0.1
   husky:
     specifier: ^8.0.3
     version: 8.0.3
