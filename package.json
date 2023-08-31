@@ -68,7 +68,7 @@
   "peerDependencies": {
     "@adonisjs/core": "^5.9.0"
   },
-  "main": "./build/providers/AdonisScheduleProvider.js",
+  "main": "./build/providers/scheduler_provider.js",
   "files": [
     "build/adonis-typings",
     "build/commands",
