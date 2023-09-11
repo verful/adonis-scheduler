@@ -7,7 +7,7 @@ settings:
 dependencies:
   luxon:
     specifier: ^3.4.2
-    version: 3.4.2
+    version: 3.4.3
   node-cron:
     specifier: ^3.0.2
     version: 3.0.2
@@ -363,7 +363,7 @@ packages:
       '@poppinss/utils': 5.0.0
       '@types/luxon': 3.3.2
       '@types/validator': 13.11.1
-      luxon: 3.4.2
+      luxon: 3.4.3
       normalize-url: 6.1.0
       tmp-cache: 1.1.0
       validator: 13.11.0
@@ -5252,8 +5252,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /luxon@3.4.2:
-    resolution: {integrity: sha512-uBoAVCVcajsrqy3pv7eo5jEUz1oeLmCcnMv8n4AJpT5hbpN9lUssAXibNElpbLce3Mhm9dyBzwYLs9zctM/0tA==}
+  /luxon@3.4.3:
+    resolution: {integrity: sha512-tFWBiv3h7z+T/tDaoxA8rqTxy1CHV6gHS//QdaH4pulbq/JuBSGgQspQQqcgnwdAx6pNI7cmvz5Sv/addzHmUg==}
     engines: {node: '>=12'}
 
   /macroable@7.0.2:
