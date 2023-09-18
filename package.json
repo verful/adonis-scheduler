@@ -60,7 +60,7 @@
     "nyc": "^15.1.0",
     "prettier": "^3.0.3",
     "reflect-metadata": "^0.1.13",
-    "semantic-release": "^21.1.1",
+    "semantic-release": "^22.0.0",
     "sinon": "^15.2.0",
     "typescript": "^5.2.2"
   },
