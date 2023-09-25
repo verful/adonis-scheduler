@@ -63,7 +63,7 @@ devDependencies:
     version: 18.17.12
   '@types/node-cron':
     specifier: ^3.0.8
-    version: 3.0.8
+    version: 3.0.9
   '@types/sinon':
     specifier: ^10.0.16
     version: 10.0.16
@@ -1543,8 +1543,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node-cron@3.0.8:
-    resolution: {integrity: sha512-+z5VrCvLwiJUohbRSgHdyZnHzAaLuD/E2bBANw+NQ1l05Crj8dIxb/kKK+OEqRitV2Wr/LYLuEBenGDsHZVV5Q==}
+  /@types/node-cron@3.0.9:
+    resolution: {integrity: sha512-P10Vf+oagnMbefD31nqjS/dpBM34qzfdpvIgVZwtwsNb0Hg2lDaPFeGcyGUJIqh3zHlDMwYXGeunGgMnswgnPg==}
     dev: true
 
   /@types/node@18.17.12:
