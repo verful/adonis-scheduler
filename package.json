@@ -61,7 +61,7 @@
     "prettier": "^3.0.3",
     "reflect-metadata": "^0.1.13",
     "semantic-release": "^21.1.1",
-    "sinon": "^15.2.0",
+    "sinon": "^17.0.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
