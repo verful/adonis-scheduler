@@ -10,7 +10,7 @@ dependencies:
     version: 3.4.3
   node-cron:
     specifier: ^3.0.2
-    version: 3.0.2
+    version: 3.0.3
 
 devDependencies:
   '@adonisjs/application':
@@ -63,7 +63,7 @@ devDependencies:
     version: 18.17.12
   '@types/node-cron':
     specifier: ^3.0.8
-    version: 3.0.8
+    version: 3.0.11
   '@types/sinon':
     specifier: ^10.0.16
     version: 10.0.16
@@ -1543,8 +1543,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node-cron@3.0.8:
-    resolution: {integrity: sha512-+z5VrCvLwiJUohbRSgHdyZnHzAaLuD/E2bBANw+NQ1l05Crj8dIxb/kKK+OEqRitV2Wr/LYLuEBenGDsHZVV5Q==}
+  /@types/node-cron@3.0.11:
+    resolution: {integrity: sha512-0ikrnug3/IyneSHqCBeslAhlK2aBfYek1fGo4bP4QnZPmiqSGRK+Oy7ZMisLWkesffJvQ1cqAcBnJC+8+nxIAg==}
     dev: true
 
   /@types/node@18.17.12:
@@ -5624,8 +5624,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /node-cron@3.0.2:
-    resolution: {integrity: sha512-iP8l0yGlNpE0e6q1o185yOApANRe47UPbLf4YxfbiNHt/RU5eBcGB/e0oudruheSf+LQeDMezqC5BVAb5wwRcQ==}
+  /node-cron@3.0.3:
+    resolution: {integrity: sha512-dOal67//nohNgYWb+nWmg5dkFdIwDm8EpeGYMekPMrngV3637lqnX0lbUcCtgibHTz6SEz7DAIjKvKDFYCnO1A==}
     engines: {node: '>=6.0.0'}
     dependencies:
       uuid: 8.3.2
