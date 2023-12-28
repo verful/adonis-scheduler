@@ -67,8 +67,8 @@ test.group('Schedule', (group) => {
 
     schedule.unlessBetween(start, end)
 
-    assert.lengthOf(schedule.filters, 1)
-    assert.isFunction(schedule.filters[0])
+    assert.lengthOf(schedule.rejects, 1)
+    assert.isFunction(schedule.rejects[0])
   })
 
   test('time interval check is correct', ({ assert }) => {
@@ -79,7 +79,7 @@ test.group('Schedule', (group) => {
 
     assert.isFalse(schedule['inTimeInterval']('6:00', '7:00')())
     assert.isFalse(schedule['inTimeInterval']('23:00', '1:00')())
-  }).pin()
+  })
 
   test('can set skip condition', ({ assert }) => {
     const schedule = new Schedule({} as any, () => {})
