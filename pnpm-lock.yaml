@@ -55,6 +55,9 @@ devDependencies:
   '@poppinss/utils':
     specifier: ^5.0.0
     version: 5.0.0
+  '@semantic-release/git':
+    specifier: ^10.0.1
+    version: 10.0.1(semantic-release@22.0.12)
   '@types/luxon':
     specifier: ^3.3.2
     version: 3.3.2
@@ -1326,9 +1329,33 @@ packages:
       - supports-color
     dev: true
 
+  /@semantic-release/error@3.0.0:
+    resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
+    engines: {node: '>=14.17'}
+    dev: true
+
   /@semantic-release/error@4.0.0:
     resolution: {integrity: sha512-mgdxrHTLOjOddRVYIYDo0fR3/v61GNN1YGkfbrjuIKg/uMgCd+Qzo3UAXJ+woLQQpos4pl5Esuw5A7AoNlzjUQ==}
     engines: {node: '>=18'}
+    dev: true
+
+  /@semantic-release/git@10.0.1(semantic-release@22.0.12):
+    resolution: {integrity: sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==}
+    engines: {node: '>=14.17'}
+    peerDependencies:
+      semantic-release: '>=18.0.0'
+    dependencies:
+      '@semantic-release/error': 3.0.0
+      aggregate-error: 3.1.0
+      debug: 4.3.4
+      dir-glob: 3.0.1
+      execa: 5.1.1
+      lodash: 4.17.21
+      micromatch: 4.0.5
+      p-reduce: 2.1.0
+      semantic-release: 22.0.12(typescript@5.3.3)
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@semantic-release/github@9.2.6(semantic-release@22.0.12):
@@ -6295,6 +6322,11 @@ packages:
     dependencies:
       mimic-fn: 4.0.0
       type-fest: 3.13.1
+    dev: true
+
+  /p-reduce@2.1.0:
+    resolution: {integrity: sha512-2USApvnsutq8uoxZBGbbWM0JIYLiEMJ9RlaN7fAzVNb9OZN0SHjjTTfIcb667XynS5Y1VhwDJVDa72TnPzAYWw==}
+    engines: {node: '>=8'}
     dev: true
 
   /p-reduce@3.0.0:
