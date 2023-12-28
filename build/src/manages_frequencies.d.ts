@@ -1,0 +1,46 @@
+/// <reference path="../adonis-typings/scheduler.d.ts" />
+import { ManagesFrequenciesContract, Time } from '@ioc:Verful/Scheduler';
+export default class ManagesFrequencies implements ManagesFrequenciesContract {
+    expression: string;
+    protected currentTimezone: string;
+    timezone(timezone: string): this;
+    protected spliceIntoPosition(position: number, value: string | number): this;
+    everyMinute(): this;
+    everyTwoMinutes(): this;
+    everyThreeMinutes(): this;
+    everyFourMinutes(): this;
+    everyFiveMinutes(): this;
+    everyTenMinutes(): this;
+    everyFifteenMinutes(): this;
+    everyThirtyMinutes(): this;
+    hourly(): this;
+    hourlyAt(offset: number | number[]): this;
+    everyTwoHours(): this;
+    everyThreeHours(): this;
+    everyFourHours(): this;
+    everySixHours(): this;
+    daily(): this;
+    dailyAt(time: Time): this;
+    twiceDaily(): this;
+    twiceDailyAt(first: number, second: number, offset?: number): this;
+    weekly(): this;
+    weeklyOn(daysOfWeek: number | number[] | string, time: Time): this;
+    monthly(): this;
+    monthlyOn(dayOfMonth: number, time?: Time): this;
+    twiceMonthly(first?: number, second?: number, time?: Time): this;
+    lastDayOfMonth(time?: Time): this;
+    quarterly(): this;
+    yearly(): this;
+    yearlyOn(month: number, dayOfMonth?: string | number, time?: Time): this;
+    days(days: number | number[] | string): this;
+    weekdays(): this;
+    weekends(): this;
+    sundays(): this;
+    mondays(): this;
+    tuesdays(): this;
+    wednesdays(): this;
+    thursdays(): this;
+    fridays(): this;
+    saturdays(): this;
+    cron(expression: string): this;
+}
