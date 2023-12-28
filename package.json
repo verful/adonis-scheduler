@@ -22,7 +22,7 @@
     "url": "https://github.com/verful/adonis-scheduler/issues"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18"
   },
   "publishConfig": {
     "access": "public",
