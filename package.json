@@ -32,7 +32,7 @@
     "@adonisjs/fold": "^8.2.0",
     "@adonisjs/require-ts": "^2.0.13",
     "@adonisjs/sink": "^5.4.3",
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^17.7.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@japa/assert": "^1.4.1",
